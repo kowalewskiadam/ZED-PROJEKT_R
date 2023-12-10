@@ -112,8 +112,6 @@ ggplotly(themes_plot)
 ```{r message=FALSE, warning=FALSE, echo=FALSE}
 set_version <- data %>% group_by(set_num, year, name, suma) %>% summarise(max_version = max(version))
 
-head(set_version)
-
 inTraining <- createDataPartition(y=set_version$max_version, p = .75, list=FALSE)
 
 training <- set_version[inTraining,]
